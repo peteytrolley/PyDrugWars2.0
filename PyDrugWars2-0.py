@@ -219,7 +219,7 @@ amountVar = IntVar()
 drugAmount = Entry(root, textvariable=amountVar, font=('calibre', 10, 'normal'), width=15)
 drugAmount.grid(row=3, column=0)
 
-amountLabel = Label(root, text='Number of drugs:')
+amountLabel = Label(root, text='Quantity of drugs to buy:')
 amountLabel.grid(row=2, column=0)
 
 cityLabel = Label(f1, text='Change city:')

@@ -29,8 +29,7 @@ WALLET = 500
 DAY = 30
 
 
-def change_day():
-    global DAY
+def change_day(DAY, PRICES):
     DAY -= 1
     if DAY < 0:
         T3.delete('1.0', END)
@@ -44,7 +43,6 @@ def change_day():
     elif DAY >= 0:
         T4.delete('1.0', END)
         T4.insert(INSERT, str(DAY))
-    global PRICES
     PRICES = market()
     T2.delete('1.0', END)
     T3.delete('1.0', END)
@@ -99,8 +97,7 @@ def get_drug():
         return drug
 
 
-def mugged():
-    global WALLET
+def mugged(WALLET):
     mugger = random.randint(1, 28)
     if mugger == 2 or mugger == 10:
         T.delete('1.0', END)
@@ -113,8 +110,7 @@ def mugged():
         T.insert(INSERT, f"You have ${WALLET:,.2f}\n")
 
 
-def busted():
-    global WALLET
+def busted(WALLET):
     cops = random.randint(1, 28)
     if cops == 2 or cops == 10:
         T.delete('1.0', END)
